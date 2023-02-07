@@ -97,13 +97,13 @@ def main():
 
     if st.checkbox("Get drug rating and prescription"):
         condition = list(data['condition'])
-        st.selectbox("Select conditions", condition)
+        drug_picked = st.selectbox("Select conditions", condition)
         if st.button("get drug"):
             st.write("Top 5")
-            st.write(data[data['condition'] == condition][['drugName', 'usefulCount']].sort_values
+            st.write(data[data['condition'] == drug_picked][['drugName', 'usefulCount']].sort_values
                      (by='usefulCount', ascending=False).head().reset_index(drop=True), table=True)
             st.write("Bottom 5")
-            st.write(data[data['condition'] == condition][['drugName', 'usefulCount']].sort_values
+            st.write(data[data['condition'] == drug_picked][['drugName', 'usefulCount']].sort_values
                      (by='usefulCount', ascending=True).head().reset_index(drop=True), table=True)
 
 
