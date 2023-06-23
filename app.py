@@ -51,12 +51,12 @@ def punctuation_removal(messy_str):
 
 data['review'] = data['review'].apply(punctuation_removal)
 
-data['review'] = data['review'].apply(nfx.remove_currency_symbols)
-data['review'] = data['review'].apply(nfx.remove_stopwords)
-data['review'] = data['review'].apply(nfx.remove_numbers)
-data['review'] = data['review'].apply(nfx.remove_currencies)
-data['review'] = data['review'].apply(nfx.remove_bad_quotes)
-data['review'] = data['review'].apply(nfx.remove_special_characters)
+# data['review'] = data['review'].apply(nfx.remove_currency_symbols)
+# data['review'] = data['review'].apply(nfx.remove_stopwords)
+# data['review'] = data['review'].apply(nfx.remove_numbers)
+# data['review'] = data['review'].apply(nfx.remove_currencies)
+# data['review'] = data['review'].apply(nfx.remove_bad_quotes)
+# data['review'] = data['review'].apply(nfx.remove_special_characters)
 
 data = data.drop_duplicates()
 
