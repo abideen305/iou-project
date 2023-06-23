@@ -5,8 +5,8 @@ import streamlit as st
 import string
 from textblob import TextBlob
 import spacy
-import neattext as nt
-import neattext.functions as nfx
+# import neattext as nt
+# import neattext.functions as nfx
 import re
 import nltk
 
