@@ -93,19 +93,19 @@ def main():
             st.write(review)
 
   if st.checkbox("Get drug rating and prescription"):
-    condition = data['condition'].unique().tolist()
-        
-    drug_picked = st.selectbox("Select conditions", condition)
-    if st.button("get drug"):
-        st.write("Top 5")
-        top_drugs = data[data['condition'] == drug_picked].groupby('drugName')['usefulCount'].sum() \
-                        .reset_index().sort_values(by='usefulCount', ascending=False).head()
-        st.write(top_drugs, table=True)
-
-        st.write("Bottom 5")
-        bottom_drugs = data[data['condition'] == drug_picked].groupby('drugName')['usefulCount'].sum() \
-                        .reset_index().sort_values(by='usefulCount', ascending=True).head()
-        st.write(bottom_drugs, table=True)
+        condition = data['condition'].unique().tolist()
+            
+        drug_picked = st.selectbox("Select conditions", condition)
+        if st.button("get drug"):
+            st.write("Top 5")
+            top_drugs = data[data['condition'] == drug_picked].groupby('drugName')['usefulCount'].sum() \
+                            .reset_index().sort_values(by='usefulCount', ascending=False).head()
+            st.write(top_drugs, table=True)
+    
+            st.write("Bottom 5")
+            bottom_drugs = data[data['condition'] == drug_picked].groupby('drugName')['usefulCount'].sum() \
+                            .reset_index().sort_values(by='usefulCount', ascending=True).head()
+            st.write(bottom_drugs, table=True)
 
 
 
